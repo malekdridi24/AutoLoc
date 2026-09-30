@@ -28,4 +28,8 @@ public class Maintenance {
 
     @Column(nullable = false, length = 255)
     private String description;
+
+    @ManyToOne ( cascade = CascadeType.ALL)
+    Vehicule vehicule;
+
 }
