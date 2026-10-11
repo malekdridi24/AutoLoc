@@ -1,0 +1,42 @@
+package tn.esprit.autoloc.service;
+
+import tn.esprit.autoloc.domain.Client;
+import tn.esprit.autoloc.repository.ClientRepository;
+
+import java.util.List;
+
+public class ClientService  implements IClientService{
+
+    ClientRepository clientrepository;
+
+    @Override
+    public List<Client> retrieveAllClients() {
+        return clientrepository.findAll();
+    }
+
+    @Override
+    public Client addClient(Client c) {
+
+        return clientrepository.save(c);
+    }
+
+    @Override
+    public Client updateClient(Client c) {
+        return clientrepository.save(c);
+    }
+
+    @Override
+    public Client retrieveClient(Long idClient) {
+        return clientrepository.findById(idClient).orElse(null);
+    }
+
+    @Override
+    public void removeClient(Long idClient) {
+        clientrepository.deleteById(idClient);
+    }
+
+    @Override
+    public List<Client> addClients(List<Client> clients) {
+        return clientrepository.saveAll(clients);
+    }
+}
