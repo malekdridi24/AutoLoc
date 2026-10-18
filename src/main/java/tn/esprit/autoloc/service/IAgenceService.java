@@ -7,9 +7,9 @@ import java.util.Optional;
 
 public interface IAgenceService {
     List<Agence> findAll();
-    Optional<Agence> findById(Long id);
-    Agence create(Agence entity);
-    Agence update(Long id, Agence entity);
+    Agence retrieveAgence(Long id);
+    Agence create(Agence a);
+    Agence update(Agence a);
     void delete(Long id);
 }
 

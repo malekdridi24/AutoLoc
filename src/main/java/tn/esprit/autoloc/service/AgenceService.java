@@ -22,9 +22,7 @@ public class AgenceService implements IAgenceService {
     }
 
     @Override
-    public Optional<Agence> findById(Long id) {
-        return agenceRepository.findById(id);
-    }
+    public Agence retrieveAgence(Long id) {return agenceRepository.findById(id).orElse(null);}
 
     @Override
     public Agence create(Agence entity) {
@@ -32,13 +30,10 @@ public class AgenceService implements IAgenceService {
     }
 
     @Override
-    public Agence update(Long id, Agence entity) {
-        return agenceRepository.save(entity);
+    public Agence update(Agence A) {
+        return agenceRepository.save(A);
     }
 
     @Override
-    public void delete(Long id) {
-        agenceRepository.deleteById(id);
-
-    }
+    public void delete(Long id) {agenceRepository.deleteById(id); }
 }

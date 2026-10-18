@@ -39,8 +39,4 @@ public class ClientService  implements IClientService{
         clientrepository.deleteById(idClient);
     }
 
-    @Override
-    public List<Client> addClients(List<Client> clients) {
-        return clientrepository.saveAll(clients);
-    }
 }
